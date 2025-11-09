@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founder Profile | IdealFounders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+
+  <div class="max-w-3xl mx-auto py-10 px-4">
+
+    <a href="explore.html" class="text-blue-600 font-semibold hover:underline">⬅ Back to Explore</a>
+
+    <div class="bg-white shadow-md rounded-xl p-8 mt-5">
+
+      <div class="flex items-center gap-4 mb-5">
+        <img id="profilePic" class="w-24 h-24 rounded-full border border-gray-300" 
+             src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+        <h2 id="fullName" class="text-2xl font-bold text-gray-800">Loading...</h2>
+      </div>
+
+      <p class="text-gray-600" id="email"></p>
+      <p class="text-gray-700 mt-2"><strong>Location:</strong> <span id="location"></span></p>
+      <p class="text-gray-700"><strong>Industry:</strong> <span id="industry"></span></p>
+      <p class="text-gray-700"><strong>Skills:</strong> <span id="skills"></span></p>
+      <p class="text-gray-700"><strong>Interests:</strong> <span id="interests"></span></p>
+      <p class="text-gray-700"><strong>Specialisation:</strong> <span id="specialisation"></span></p>
+      <p class="text-gray-700"><strong>Qualities Wanted:</strong> <span id="qualities"></span></p>
+      <button id="connectBtn"
+class="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+Send Connection Request
+</button>
+
+    </div>
+
+  </div>
+
+  <script type="module" src="public-profile.js"></script>
+</body>
+</html>

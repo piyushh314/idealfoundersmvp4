@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | IdealFounders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col">
+
+  <!-- NAVBAR -->
+  <nav class="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <a href="index.html" class="text-2xl font-bold text-blue-700 flex items-center gap-2">
+      <img src="ifbluelogo.png" alt="Logo" class="w-8 h-8 rounded-full"> IdealFounders
+    </a>
+    <div class="flex items-center gap-4 flex-wrap justify-end">
+      <a href="request-inbox.html" class="relative text-sm font-medium text-blue-700 hover:underline flex items-center gap-1">
+        📥 Inbox
+        <span id="navReqBadge" class="ml-1 hidden rounded-full bg-blue-600 text-white px-2 py-0.5 text-xs"></span>
+      </a>
+      <p class="hidden sm:block text-gray-700 font-medium">Hi, <span id="userName" class="text-blue-600">Loading...</span></p>
+      <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition text-sm sm:text-base">
+        Logout
+      </button>
+    </div>
+  </nav>
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 py-10 space-y-10 w-full">
+
+    <!-- USER PROFILE SUMMARY -->
+    <section class="bg-white rounded-2xl shadow-lg p-6">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img id="userPhoto" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+             class="w-24 h-24 rounded-full border-4 border-blue-500 shadow-md"
+             alt="Profile Photo">
+
+        <div class="flex-1 text-center md:text-left">
+          <h2 id="fullName" class="text-2xl font-bold text-gray-800">Loading...</h2>
+          <p id="email" class="text-gray-500 text-sm mb-3">Loading...</p>
+
+          <div class="grid sm:grid-cols-2 gap-2 text-sm text-gray-600">
+            <p><span class="font-semibold text-blue-600">Location:</span> <span id="location">—</span></p>
+            <p><span class="font-semibold text-blue-600">Industry:</span> <span id="interestsTopics">—</span></p>
+            <p><span class="font-semibold text-blue-600">Skills:</span> <span id="responsibilities">—</span></p>
+          </div>
+
+          <div class="mt-4 flex flex-wrap justify-center md:justify-start gap-3">
+            <a href="profile-setup.html" class="text-blue-600 text-sm font-medium hover:underline">✏️ Edit Profile</a>
+            <span class="text-sm text-gray-600">Connections: <b id="connectionsCount">0</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUESTS PANEL -->
+    <section class="bg-white rounded-2xl shadow-lg p-6">
+      <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
+        <h3 class="text-xl font-bold text-blue-700">Your Requests</h3>
+        <a href="request-inbox.html" class="text-blue-600 text-sm font-semibold hover:underline">Open Inbox →</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Incoming -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-3">Incoming</h4>
+          <div id="incomingList" class="space-y-3">
+            <p id="incomingEmpty" class="text-gray-500 text-sm">No incoming requests.</p>
+          </div>
+        </div>
+
+        <!-- Sent -->
+        <div>
+          <h4 class="font-semibold text-gray-800 mb-3">Sent</h4>
+          <div id="sentList" class="space-y-3">
+            <p id="sentEmpty" class="text-gray-500 text-sm">No sent requests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT FOUNDERS -->
+    <section class="bg-white rounded-2xl shadow-lg p-6">
+      <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
+        <h3 class="text-xl font-bold text-blue-700">Recently Joined Founders</h3>
+        <a href="explore.html" class="text-blue-600 text-sm font-semibold hover:underline">Continue Exploring →</a>
+      </div>
+      <div id="recentFounders" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <p id="recentLoading" class="col-span-3 text-gray-500 text-sm text-center">Loading recent founders...</p>
+      </div>
+    </section>
+
+    <!-- CONNECTIONS LIST -->
+    <section class="bg-white rounded-2xl shadow-lg p-6">
+      <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
+        <h3 class="text-xl font-bold text-blue-700">Your Connections</h3>
+        <a href="chat.html" class="text-blue-600 text-sm font-semibold hover:underline">Open All Chats →</a>
+      </div>
+      <div id="connectionsList" class="grid sm:grid-cols-2 gap-4">
+        <p id="connectionsEmpty" class="text-gray-500 text-sm col-span-2 text-center">No connections yet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-white border-t text-gray-500 text-center text-sm py-4 mt-10">
+    © 2025 IdealFounders. Built for ambitious founders 🚀
+  </footer>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

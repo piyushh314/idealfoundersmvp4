@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Idealfounders | Find a Co-Founder & Build Your Startup</title>
+  <meta name="description" content="Find your perfect co-founder on Idealfounders, the social network for entrepreneurs. Connect with business partners, find technical founders, and build your startup team." />
+  <meta name="keywords" content="find a cofounder, perfect cofounder, startup, entrepreneur, idealfounders, tech, business partner, technical cofounder, founder network" />
+
+  <meta property="og:title" content="Idealfounders | Find Your Perfect Co-Founder" />
+  <meta property="og:description" content="The social network for entrepreneurs to connect, chat, and build." />
+  <meta property="og:image" content="ifbluelogo.png" /> <meta property="og:url" content="https://idealfounders.com" /> <meta property="og:type" content="website" />
+
+  <link rel="canonical" href="https://idealfounders.com" /> <link rel="icon" type="image/png" href="ifbluelogo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  </head>
+
+<body class="text-gray-800 font-sans bg-white">
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-lg shadow-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4 px-6">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="ifbluelogo.png" alt="Idealfounders Logo" class="w-10 h-10 rounded-full" />
+        <span class="text-xl md:text-2xl font-bold text-blue-800">Idealfounders</span>
+      </a>
+      <button id="menu-btn" class="md:hidden text-blue-800 focus:outline-none" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <nav class="hidden md:flex space-x-6 items-center text-gray-700 font-medium">
+        <a href="index.html" class="text-blue-600 font-semibold">Home</a>
+        <a href="dashboard.html" class="hover:text-blue-600 transition">My Profile</a>
+        <a href="about.html" class="hover:text-blue-600 transition">About</a>
+        <a href="login.html" class="text-blue-600 hover:text-blue-800 transition">
+          Login
+        </a>
+        <a href="signup.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition shadow">
+          Sign Up Free
+        </a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <nav class="flex flex-col space-y-3 p-4 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+        <a href="dashboard.html" class="hover:text-blue-600 transition">My Profile</a>
+        <a href="about.html" class="hover:text-blue-600 transition">About</a>
+        <a href="login.html" class="hover:text-blue-600 transition">Login</a>
+        <a href="signup.html" class="bg-blue-600 text-white px-4 py-2 rounded text-center hover:bg-blue-700 transition">
+          Sign Up Free
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="max-w-7xl mx-auto px-6 py-16 sm:py-20 md:py-32 grid md:grid-cols-2 gap-10 items-center">
+      <div data-aos="fade-right">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-blue-900 leading-tight mb-6">
+          Find Your Perfect Co-Founder.
+          <span class="text-blue-600">Build Your Startup Team.</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
+          Join <b class="text-gray-800">1,400+</b> entrepreneurs, founders, and advisors who are actively looking for their next venture.
+        </p>
+
+        <form action="signup.html" method="GET" class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="looking_for" class="block text-sm font-semibold text-gray-700 mb-2">I am looking for a...</label>
+              <select id="looking_for" name="looking_for" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option>Co-Founder</option>
+                <option>Advisor</option>
+                <option>Investor</option>
+                <option>Core Team Member</option>
+              </select>
+            </div>
+            <div>
+              <label for="expertise" class="block text-sm font-semibold text-gray-700 mb-2">With expertise in...</label>
+              <input type="text" id="expertise" name="expertise" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., AI, Marketing, React">
+            </div>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition mt-4 text-lg">
+            Find Your Co-Founder Now
+          </button>
+        </form>
+      </div>
+      <div class="hidden md:block" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&h=1000&fit=crop" alt="Entrepreneurs and co-founders in a team meeting" class="rounded-2xl shadow-xl aspect-square object-cover">
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-blue-900" data-aos="fade-up">A Founder Network Designed For...</h2>
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+          <svg class="w-14 h-14 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+          </svg>
+          <h3 class="font-semibold text-xl mt-5 mb-3 text-gray-900">Technical Founders</h3>
+          <p class="text-gray-600">
+            Engineers and developers looking for a partner to handle business, marketing, or operations.
+          </p>
+        </div>
+
+        <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="200">
+          <svg class="w-14 h-14 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+          </svg>
+          <h3 class="font-semibold text-xl mt-5 mb-3 text-gray-900">Business Visionaries</h3>
+          <p class="text-gray-600">
+            Marketers and strategists with a startup idea who need a technical co-founder to build the product.
+          </p>
+        </div>
+        
+        <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="300">
+          <svg class="w-14 h-14 text-blue-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A1.5 1.5 0 0118 21.75H6a1.5 1.5 0 01-1.499-1.632z" />
+          </svg>
+          <h3 class="font-semibold text-xl mt-5 mb-3 text-gray-900">Early-Stage Teams</h3>
+          <p class="text-gray-600">
+            Solo founders or small teams looking for that one crucial "missing piece" to complete their co-founding team.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-16 text-blue-900" data-aos="fade-up">How to Find a Co-Founder (3 Steps)</h2>
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">1</div>
+          <h3 class="font-semibold text-xl mb-2 text-gray-900">Create Your Profile</h3>
+          <p class="text-gray-600">Tell us your skills, industry, and the startup you want to build.</p>
+        </div>
+        <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">2</div>
+          <h3 class="font-semibold text-xl mb-2 text-gray-900">Get Matched</h3>
+          <p class="text-gray-600">Our algorithm connects you with founders who align with your goals.</p>
+        </div>
+        <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-2xl font-bold">3</div>
+          <h3 class="font-semibold text-xl mb-2 text-gray-900">Start Building</h3>
+          <p class="text-gray-600">Connect, chat in real-time, and build your business together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 space-y-16 sm:space-y-20">
+      
+      <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center" data-aos="fade-left">
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-full h-full bg-blue-100 rounded-2xl transform -rotate-3"></div>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&h=675&fit=crop" alt="Entrepreneurs in a meeting to find a co-founder" class="relative z-10 rounded-2xl shadow-xl aspect-video object-cover">
+        </div>
+        <div>
+          <span class="text-sm font-bold text-blue-600 uppercase">Connect with Purpose</span>
+          <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 mb-4">Find Your Co-Founder, Faster</h3>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Stop endless scrolling. Our platform matches you based on
+            <b>skills, industry, and shared startup goals</b>. Find a technical co-founder for your SaaS, or a marketing expert as your business partner.
+          </p>
+        </div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center" data-aos="fade-right">
+        <div class="md:order-2 relative">
+          <div class="absolute -top-4 -right-4 w-full h-full bg-indigo-100 rounded-2xl transform rotate-3"></div>
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&h=675&fit=crop" alt="Co-founders in real-time chat about their business" class="relative z-10 rounded-2xl shadow-xl aspect-video object-cover">
+        </div>
+        <div class="md:order-1">
+          <span class="text-sm font-bold text-blue-600 uppercase">Real-Time Collaboration</span>
+          <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-2 mb-4">Connect With Your Business Partner</h3>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+            Once you match, don't wait. Use our built-in
+            <b>real-time, end-to-end encrypted chat</b> to discuss your startup, share files, and plan your next steps securely.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-gradient-to-br from-green-50 to-blue-50 text-gray-800 text-center">
+    <div class="max-w-5xl mx-auto px-6" data-aos="zoom-in">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-900">Join Our Entrepreneur Community</h2>
+      <p class="max-w-2xl mx-auto text-base sm:text-lg mb-10 text-gray-600">
+        Meet other visionaries in our private WhatsApp group — share ideas, find opportunities, and grow together.
+      </p>
+      <a href="https://chat.whatsapp.com/ESbxoow4pEH8RSVkaNU2ae?mode=wwt" target="_blank"
+         class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition text-base sm:text-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.546 4.16 1.582 5.97L.08 24l6.213-1.493A11.925 11.925 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zM12 22c-1.662 0-3.29-.405-4.73-1.173l-.34-.18-3.683.885.885-3.683-.18-.34A9.946 9.946 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+        </svg>
+        Join WhatsApp Group
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-blue-700 text-white text-center">
+    <div class="max-w-3xl mx-auto px-6" data-aos="zoom-in">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">Find Your Co-Founder Today</h2>
+      <p class="mb-10 text-blue-100 text-lg sm:text-xl">
+        It only takes one step to find your perfect business partner.
+      </p>
+      <a href="signup.html"
+         class="bg-white text-blue-700 font-bold px-8 sm:px-10 py-3 sm:py-4 rounded-full shadow-2xl hover:bg-blue-50 transition text-base sm:text-lg">
+         Sign Up Now — It's Free
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        <div>
+          <a href="index.html" class="flex items-center space-x-2 mb-4">
+            <img src="ifbluelogo.png" alt="Idealfounders Logo" class="w-8 h-8 rounded-full" />
+            <span class="text-xl font-bold text-white">Idealfounders</span>
+          </a>
+          <p class="text-sm">Connecting the next generation of builders and innovators.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Platform</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="signup.html" class="hover:text-white">Find a Co-Founder</a>
+            <a href="underconstruction.html" class="hover:text-white">Find an Advisor</a>
+            <a href="underconstruction.html" class="hover:text-white">Find an Investor</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Company</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="about.html" class="hover:text-white">About Us</a>
+            <a href="underconstruction.html" class="hover:text-white">Blog</a>
+            <a href="underconstruction.html" class="hover:text-white">Careers</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Legal</h4>
+          <nav class="flex flex-col space-y-2">
+            <a href="underconstruction.html" class="hover:text-white">Privacy Policy</a>
+            <a href="underconstruction.html" class="hover:text-white">Terms of Service</a>
+          </nav>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+        <p>© 2025 Idealfounders — All Rights Reserved</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+          </a>
+          <a href="#" class="hover:text-white" aria-label="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+          </a>
+          <a href="#" class="hover:text-white" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 700,
+      once: true,
+    });
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+</body>
+</html>

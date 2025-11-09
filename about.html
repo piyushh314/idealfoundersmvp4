@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>About Us | Idealfounders</title>
+  <link rel="icon" type="image/png" href="ifbluelogo.png" />
+</head>
+<body class="bg-gray-100">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-gray-50 shadow-md">
+  <div class="container mx-auto flex justify-between items-center p-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2">
+      <img src="ifbluelogo.png" alt="Idealfounders Logo" class="w-10 h-10 rounded-full bg-white p-1">
+      <span class="text-xl font-semibold text-blue-800">Idealfounders</span>
+    </a>
+
+    <!-- Hamburger button (only on mobile) -->
+    <button id="menu-btn" class="md:hidden text-blue-800 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 text-gray-700 items-center">
+      <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+      <a href="dashboard.html" class="hover:text-blue-600 transition">My Profile</a>
+      <a href="about.html" class="hover:text-blue-600 transition">About</a>
+      <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Login
+      </a>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-t border-gray-200">
+    <nav class="flex flex-col space-y-3 p-4 text-gray-700">
+      <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+      <a href="dashboard.html" class="hover:text-blue-600 transition">My Profile</a>
+      <a href="about.html" class="hover:text-blue-600 transition">About</a>
+      <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded text-center hover:bg-blue-700 transition">
+        Login
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- Toggle Script -->
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+
+  <!-- About Section -->
+  <section class="container mx-auto py-16 px-4 text-center">
+    <h1 class="text-4xl font-bold text-blue-800 mb-4">About Idealfounders</h1>
+    <p class="text-gray-600 max-w-3xl mx-auto mb-12 text-lg">
+      Idealfounders is built by a group of young innovators from Delhi University’s SSCBS.  
+      We’re on a mission to bring visionaries, builders, and creators together to form powerful founding teams —  
+      where ideas meet execution, and ambition meets partnership.
+    </p>
+<!-- Team Section -->
+<div class="grid md:grid-cols-3 gap-10 mt-10">
+
+  <!-- Pushkar -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition order-2 md:order-1">
+    <img src="images/pushkar.jpeg" alt="Pushkar" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-600">
+    <h2 class="text-2xl font-semibold text-gray-800">Pushkar</h2>
+    <p class="text-blue-600 font-medium mb-2">Finance Head & Strategist</p>
+    <p class="text-gray-600 mb-3">Co-founder | BMS (1st Year)</p>
+    <p class="text-gray-500 text-sm">The financial brain and strategist, turning bold ideas into sustainable business models.</p>
+    <p class="text-gray-400 text-sm mt-2">Shaheed Sukhdev College of Business Studies, DU</p>
+  </div>
+
+  <!-- Piyush -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition order-1 md:order-2">
+    <img src="images/piyushpfp.jpeg" alt="Piyush Yadav" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-600">
+    <h2 class="text-2xl font-semibold text-gray-800">Piyush Yadav</h2>
+    <p class="text-blue-600 font-medium mb-2">Tech Heart & Innovator</p>
+    <p class="text-gray-600 mb-3">Co-founder | BMS (1st Year)</p>
+    <p class="text-gray-500 text-sm">The tech mind behind Idealfounders, driving innovation and building the digital future.</p>
+    <p class="text-gray-400 text-sm mt-2">Shaheed Sukhdev College of Business Studies, DU</p>
+  </div>
+
+  <!-- Harsh Raj -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition order-3 md:order-3">
+    <img src="images/harshraj.jpeg" alt="Harsh Raj" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-600">
+    <h2 class="text-2xl font-semibold text-gray-800">Harsh Raj</h2>
+    <p class="text-blue-600 font-medium mb-2">Marketing Head & Idea Generator</p>
+    <p class="text-gray-600 mb-3">Co-founder | BMS (1st Year)</p>
+    <p class="text-gray-500 text-sm">The creative spark and marketing mind, turning fresh ideas into impactful brand stories that connect and inspire.</p>
+    <p class="text-gray-400 text-sm mt-2">Shaheed Sukhdev College of Business Studies, DU</p>
+  </div>
+</div>
+
+   <!-- Footer -->
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <!-- Logo replaced here -->
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img src="ifbluelogo.png" alt="Idealfounders Logo" class="w-10 h-10 rounded-full bg-white p-1">
+        <span class="ml-3 text-xl">Idealfounders</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+        © 2025 Idealfounders
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <a class="text-gray-500"><svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg></a>
+        <a class="ml-3 text-gray-500"><svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

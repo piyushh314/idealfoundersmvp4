@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-M-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat | IdealFounders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body class="bg-gray-100 flex flex-col h-screen">
+
+    <nav class="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center gap-3">
+            <a href="dashboard.html" class="text-blue-600 hover:text-blue-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+            </a>
+            <img id="chatUserPhoto" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-10 h-10 rounded-full border-2 border-blue-500" alt="Avatar">
+            <div>
+                <h2 id="chatUserName" class="text-lg font-bold text-gray-800">Loading...</h2>
+                <p id="typingIndicator" class="text-xs text-blue-600 h-4"></p>
+            </div>
+        </div>
+        <a href="public-profile.html" id="viewProfileBtn" class="bg-blue-50 text-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-100 text-sm font-medium">
+            View Profile
+        </a>
+    </nav>
+
+    <main id="messageList" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <div class="flex justify-center items-center h-full">
+            <p class="text-gray-500">Loading messages...</p>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t p-4 sticky bottom-0 z-50">
+        <form id="messageForm" class="flex items-center gap-3 max-w-4xl mx-auto">
+            <textarea id="messageInput"
+                class="flex-1 border border-gray-300 rounded-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                rows="1" placeholder="Type your message..."></textarea>
+            <button type="submit" id="sendBtn"
+                class="bg-blue-600 text-white rounded-lg p-3 flex-shrink-0 hover:bg-blue-700 transition disabled:opacity-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+            </button>
+        </form>
+    </footer>
+
+    <script type="module" src="chat.js"></script>
+</body>
+</html>

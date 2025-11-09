@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complete Profile • IdealFounders</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="ifbluelogo.png" class="w-9 h-9 rounded-full bg-white p-1" alt="Idealfounders"/>
+        <span class="font-bold text-blue-800">Idealfounders</span>
+      </a>
+      <div class="text-sm text-gray-600">
+        Signed in as <span id="signedEmail" class="font-medium text-blue-700">—</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <!-- Progress -->
+    <div class="mb-6">
+      <div class="flex items-center justify-between text-xs font-medium text-gray-600 mb-2">
+        <span id="stepLabel">Step 1 of 4</span>
+        <span id="stepTitle" class="uppercase tracking-wide">Platform Principles</span>
+      </div>
+      <div class="w-full h-2 bg-blue-100 rounded-full overflow-hidden">
+        <div id="progressBar" class="h-2 bg-blue-600 w-1/4 transition-all duration-500"></div>
+      </div>
+    </div>
+
+    <form id="profileForm" class="space-y-8">
+
+      <!-- STEP 1 — Principles -->
+      <section id="step1" class="bg-white rounded-xl shadow p-6 space-y-4">
+        <h2 class="text-xl font-bold text-blue-800">Platform Principles</h2>
+        <p class="text-gray-600">Please confirm the following so everyone has a great experience.</p>
+
+        <div class="space-y-3">
+          <label class="flex gap-3 items-start">
+            <input id="agree_cofounder" type="checkbox" class="mt-1">
+            <span>I’m here to find a <strong>co-founder</strong> (a true partner with meaningful equity, ~10%+).</span>
+          </label>
+          <label class="flex gap-3 items-start">
+            <input id="agree_no_selling" type="checkbox" class="mt-1">
+            <span>I won’t use this platform to <strong>sell services</strong> or promote a product.</span>
+          </label>
+          <label class="flex gap-3 items-start">
+            <input id="agree_no_hiring" type="checkbox" class="mt-1">
+            <span>I won’t try to <strong>hire non-founder employees</strong> here.</span>
+          </label>
+          <label class="flex gap-3 items-start">
+            <input id="agree_respect" type="checkbox" class="mt-1">
+            <span>I’ll <strong>treat everyone respectfully</strong> — no rude or offensive behavior.</span>
+          </label>
+          <label class="flex gap-3 items-start">
+            <input id="agree_no_cold_external" type="checkbox" class="mt-1">
+            <span>I won’t contact people on external platforms (e.g., LinkedIn) without prior consent.</span>
+          </label>
+          <label class="flex gap-3 items-start">
+            <input id="agree_platform_only" type="checkbox" class="mt-1">
+            <span>I’ll use Idealfounders <strong>only to find a co-founder</strong>.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- STEP 2 — Basics -->
+      <section id="step2" class="bg-white rounded-xl shadow p-6 space-y-4 hidden">
+        <h2 class="text-xl font-bold text-blue-800">About You — Basics</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm text-gray-700">First name *</label>
+            <input id="firstName" class="w-full border rounded-lg px-3 py-2" placeholder="Piyush" required>
+          </div>
+          <div>
+            <label class="text-sm text-gray-700">Last name *</label>
+            <input id="lastName" class="w-full border rounded-lg px-3 py-2" placeholder="Yadav" required>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Email *</label>
+            <input id="email" type="email" class="w-full border rounded-lg px-3 py-2" placeholder="you@domain.com" required>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">LinkedIn URL</label>
+            <div class="flex gap-3">
+              <input id="linkedinUrl" class="flex-1 border rounded-lg px-3 py-2" placeholder="https://linkedin.com/in/...">
+              <label class="flex items-center gap-2 text-sm">
+                <input id="noLinkedin" type="checkbox"> I don’t use LinkedIn
+              </label>
+            </div>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Location (City, Country) *</label>
+            <input id="location" class="w-full border rounded-lg px-3 py-2" placeholder="Delhi, India" required>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Introduce yourself *</label>
+            <textarea id="bio" class="w-full border rounded-lg px-3 py-2 h-24" placeholder="Brief background, what you love building, what you’re great at…" required></textarea>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Profile photo (optional)</label>
+            <input id="profilePhoto" type="file" accept="image/*" class="w-full border rounded-lg px-3 py-2">
+            <p class="text-xs text-gray-500 mt-1">We’ll add image uploads via Firebase Storage later.</p>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Intro video (optional)</label>
+            <input id="introVideo" type="file" accept="video/*" class="w-full border rounded-lg px-3 py-2">
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">An accomplishment you’re proud of</label>
+            <textarea id="accomplishment" class="w-full border rounded-lg px-3 py-2 h-20"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Education</label>
+            <textarea id="education" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="Schools, degrees (field), years"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Employment</label>
+            <textarea id="employment" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="Employers, titles, dates"></textarea>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Are you technical? *</label>
+            <select id="isTechnical" class="w-full border rounded-lg px-3 py-2" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Gender (optional)</label>
+            <input id="gender" class="w-full border rounded-lg px-3 py-2">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Birthday (dd/mm/yyyy) (optional)</label>
+            <input id="birthday" class="w-full border rounded-lg px-3 py-2" placeholder="31/12/2005">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Scheduling URL (optional)</label>
+            <input id="schedulingUrl" class="w-full border rounded-lg px-3 py-2" placeholder="Calendly / Cal / Google Calendar link">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Twitter URL (optional)</label>
+            <input id="twitterUrl" class="w-full border rounded-lg px-3 py-2" placeholder="https://twitter.com/...">
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Instagram URL (optional)</label>
+            <input id="instagramUrl" class="w-full border rounded-lg px-3 py-2" placeholder="https://instagram.com/...">
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">How did you hear about IdealFounders? *</label>
+            <input id="referralSource" class="w-full border rounded-lg px-3 py-2" placeholder="Friend, WhatsApp group, X, LinkedIn…" required>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3 — More About You -->
+      <section id="step3" class="bg-white rounded-xl shadow p-6 space-y-4 hidden">
+        <h2 class="text-xl font-bold text-blue-800">What & how you want to build</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Do you already have an idea? *</label>
+            <select id="ideaCommitment" class="w-full border rounded-lg px-3 py-2" required>
+              <option value="">Select</option>
+              <option value="committed">Yes — I’m committed and need a partner to build it</option>
+              <option value="some-ideas">I have ideas but open to exploring</option>
+              <option value="no-idea">No — happy to help a co-founder or explore together</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Company / project name (if any)</label>
+            <input id="companyName" class="w-full border rounded-lg px-3 py-2" placeholder="Optional">
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Describe your project / idea</label>
+            <textarea id="companyDesc" class="w-full border rounded-lg px-3 py-2 h-24" placeholder="A few sentences…"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Progress so far (optional)</label>
+            <textarea id="progress" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="Prototype, users, learnings…"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Funding raised (optional)</label>
+            <textarea id="funding" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="Who invested and how much…"></textarea>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">Do you already have a co-founder? *</label>
+            <select id="hasCofounder" class="w-full border rounded-lg px-3 py-2" required>
+              <option value="">Select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-sm text-gray-700">When can you be full-time? *</label>
+            <select id="fullTimeTiming" class="w-full border rounded-lg px-3 py-2" required>
+              <option value="">Select</option>
+              <option>Already full-time</option>
+              <option>As soon as I meet the right partner</option>
+              <option>Within a year</option>
+              <option>No specific plan yet</option>
+            </select>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Areas you can own in a startup *</label>
+            <textarea id="responsibilities" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="Examples: product, engineering, GTM, sales, ops…" required></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Topics & industries you’re excited about *</label>
+            <textarea id="interestsTopics" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="AI, SaaS, fintech, edtech…" required></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Equity split expectations *</label>
+            <textarea id="equityExpectations" class="w-full border rounded-lg px-3 py-2 h-20" placeholder="Be honest about how you think about equity" required></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Outside of work — hobbies / interests</label>
+            <textarea id="hobbies" class="w-full border rounded-lg px-3 py-2 h-20"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Your story — how you got here</label>
+            <textarea id="lifePath" class="w-full border rounded-lg px-3 py-2 h-24"></textarea>
+          </div>
+
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-700">Anything else?</label>
+            <textarea id="anythingElse" class="w-full border rounded-lg px-3 py-2 h-20"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 4 — Partner Preferences -->
+      <section id="step4" class="bg-white rounded-xl shadow p-6 space-y-5 hidden">
+        <h2 class="text-xl font-bold text-blue-800">Your Partner Preferences</h2>
+
+        <div class="space-y-5">
+          <div>
+            <label class="text-sm text-gray-700">What do you value in a co-founder? *</label>
+            <textarea id="lookingFor" class="w-full border rounded-lg px-3 py-2 h-20" required></textarea>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-gray-700">Prefer co-founders with a specific idea? *</label>
+              <select id="ideaPreference" class="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select</option>
+                <option>Show only founders with a specific idea</option>
+                <option>Show founders not fixed on an idea</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="ideaImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-sm text-gray-700">Prefer technical vs non-technical? *</label>
+              <select id="profileTypePreference" class="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select</option>
+                <option>Technical</option>
+                <option>Non-technical</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="profileTypeImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-sm text-gray-700">Timing alignment *</label>
+              <select id="timingPreference" class="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select</option>
+                <option>Only show matches with my timing</option>
+                <option>Prefer timing match (not required)</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="timingImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-sm text-gray-700">Location preference *</label>
+              <select id="locationPreference" class="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select</option>
+                <option>Within a distance of me</option>
+                <option>In my country</option>
+                <option>In my region</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div id="distanceWrap" class="hidden">
+              <label class="text-sm text-gray-700">Max distance (km)</label>
+              <input id="maxDistanceKm" type="number" min="1" class="w-full border rounded-lg px-3 py-2" placeholder="e.g. 25">
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="locationImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-sm text-gray-700">Age preference *</label>
+              <select id="agePreference" class="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select</option>
+                <option>Within an age range</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div id="ageWrap" class="hidden grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-sm text-gray-700">Min age</label>
+                <input id="ageMin" type="number" min="16" class="w-full border rounded-lg px-3 py-2" placeholder="e.g. 18">
+              </div>
+              <div>
+                <label class="text-sm text-gray-700">Max age</label>
+                <input id="ageMax" type="number" min="16" class="w-full border rounded-lg px-3 py-2" placeholder="e.g. 40">
+              </div>
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="ageImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="text-sm text-gray-700">Areas your co-founder should own *</label>
+              <textarea id="cofounderAreas" class="w-full border rounded-lg px-3 py-2 h-20" required></textarea>
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="cofounderAreasImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-sm text-gray-700">Match on shared interests? *</label>
+              <select id="interestMatchPreference" class="w-full border rounded-lg px-3 py-2" required>
+                <option value="">Select</option>
+                <option>Only show people who share my interests</option>
+                <option>Prefer shared interests (not required)</option>
+                <option>No preference</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-sm text-gray-700">Importance</label>
+              <select id="interestImportance" class="w-full border rounded-lg px-3 py-2">
+                <option>Low</option><option>Medium</option><option>High</option><option>Very high</option><option>Must-have</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="flex items-center gap-2">
+            <input id="alertOnMatch" type="checkbox">
+            <span>Alert me when someone joins who matches all my preferences</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex items-center justify-between">
+        <button type="button" id="backBtn" class="px-4 py-2 rounded-lg border text-gray-700 hover:bg-gray-50">Back</button>
+        <div class="flex gap-3">
+          <button type="button" id="nextBtn" class="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">Next</button>
+          <button type="submit" id="submitBtn" class="hidden px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">Save & Finish</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script type="module" src="profile-setup.js"></script>
+</body>
+</html>
