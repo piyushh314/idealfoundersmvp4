@@ -70,7 +70,7 @@ function listenForIncomingRequests(uid) {
   // UPDATED: Query 'connections' collection
   const q = query(
     collection(db, "connections"),
-    where("receiver", "==", uid), // Use 'receiver'
+    where("to", "==", uid), // Use 'receiver'
     where("status", "==", "pending")
   );
 
@@ -192,7 +192,7 @@ function listenForSentRequests(uid) {
   // UPDATED: Query 'connections' collection
   const q = query(
     collection(db, "connections"),
-    where("sender", "==", uid), // Use 'sender'
+    where("from", "==", uid), // Use 'sender'
     where("status", "==", "pending")
   );
 
