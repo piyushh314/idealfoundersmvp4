@@ -110,7 +110,7 @@ function listenForIncomingRequests(uid) {
   // FIXED: Query 'connections' collection
   const incomingQ = query(
     collection(db, "connections"),
-    where("receiver", "==", uid),
+    where("to", "==", uid),
     where("status", "==", "pending")
   );
 
@@ -154,7 +154,7 @@ function listenForSentRequests(uid) {
   // FIXED: Query 'connections' collection
   const sentQ = query(
     collection(db, "connections"),
-    where("sender", "==", uid),
+    where("to", "==", uid),
     where("status", "==", "pending")
   );
 
