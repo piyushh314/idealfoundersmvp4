@@ -125,7 +125,7 @@ function listenForIncomingRequests(uid) {
 
     for (const docSnap of snap.docs) {
       const req = docSnap.data();
-      const senderSnap = await getDoc(doc(db, "users", req.sender));
+      const senderSnap = await getDoc(doc(db, "users", req.from));
       const sender = senderSnap.data() || {};
 
       const card = document.createElement("div");
@@ -154,7 +154,7 @@ function listenForSentRequests(uid) {
   // FIXED: Query 'connections' collection
   const sentQ = query(
     collection(db, "connections"),
-    where("to", "==", uid),
+    where("from", "==", uid),
     where("status", "==", "pending")
   );
 
@@ -169,7 +169,7 @@ function listenForSentRequests(uid) {
 
     for (const docSnap of snap.docs) {
       const req = docSnap.data();
-      const receiverSnap = await getDoc(doc(db, "users", req.receiver));
+      const receiverSnap = await getDoc(doc(db, "users", req.to));
       const receiver = receiverSnap.data() || {};
 
       const card = document.createElement("div");
