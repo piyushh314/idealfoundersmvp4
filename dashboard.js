@@ -61,15 +61,15 @@ onAuthStateChanged(auth, async (user) => {
   listenForSentRequests(user.uid);
 });
 
-// 🔹 Real-time incoming requests (Updated to use 'connectionRequests')
+// 🔹 Real-time incoming requests (Updated to use 'connections')
 function listenForIncomingRequests(uid) {
   const incomingList = $("incomingList");
   const empty = $("incomingEmpty");
   const badge = $("navReqBadge");
 
-  // UPDATED: Query 'connectionRequests' collection
+  // UPDATED: Query 'connections' collection
   const q = query(
-    collection(db, "connectionRequests"),
+    collection(db, "connections"),
     where("receiver", "==", uid), // Use 'receiver'
     where("status", "==", "pending")
   );
@@ -121,8 +121,8 @@ function listenForIncomingRequests(uid) {
     const id = e.target.dataset.accept || e.target.dataset.decline;
     if (!id) return;
 
-    // Get the request from 'connectionRequests'
-    const reqRef = doc(db, "connectionRequests", id);
+    // Get the request from 'connections'
+    const reqRef = doc(db, "connections", id);
     const reqSnap = await getDoc(reqRef);
     if (!reqSnap.exists()) return;
 
@@ -184,14 +184,14 @@ function listenForIncomingRequests(uid) {
   });
 }
 
-// 🔹 Real-time sent requests (Updated to use 'connectionRequests')
+// 🔹 Real-time sent requests (Updated to use 'connections')
 function listenForSentRequests(uid) {
   const sentList = $("sentList");
   const empty = $("sentEmpty");
 
-  // UPDATED: Query 'connectionRequests' collection
+  // UPDATED: Query 'connections' collection
   const q = query(
-    collection(db, "connectionRequests"),
+    collection(db, "connections"),
     where("sender", "==", uid), // Use 'sender'
     where("status", "==", "pending")
   );

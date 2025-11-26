@@ -107,9 +107,9 @@ function listenForIncomingRequests(uid) {
   const incomingWrap = $("incomingRequests");
   const noIncoming = $("noIncoming");
 
-  // FIXED: Query 'connectionRequests' collection
+  // FIXED: Query 'connections' collection
   const incomingQ = query(
-    collection(db, "connectionRequests"),
+    collection(db, "connections"),
     where("receiver", "==", uid),
     where("status", "==", "pending")
   );
@@ -151,9 +151,9 @@ function listenForSentRequests(uid) {
   const sentWrap = $("sentRequests");
   const noSent = $("noSent");
 
-  // FIXED: Query 'connectionRequests' collection
+  // FIXED: Query 'connections' collection
   const sentQ = query(
-    collection(db, "connectionRequests"),
+    collection(db, "connections"),
     where("sender", "==", uid),
     where("status", "==", "pending")
   );
@@ -189,7 +189,7 @@ $("incomingRequests").addEventListener("click", async (e) => {
   const reqId = e.target.dataset.id;
   if (!reqId) return;
 
-  const reqRef = doc(db, "connectionRequests", reqId);
+  const reqRef = doc(db, "connections", reqId);
   const reqSnap = await getDoc(reqRef);
   if (!reqSnap.exists()) return;
   
