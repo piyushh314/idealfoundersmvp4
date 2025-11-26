@@ -194,7 +194,7 @@ $("incomingRequests").addEventListener("click", async (e) => {
   if (!reqSnap.exists()) return;
   
   const reqData = reqSnap.data();
-  const connectionId = [reqData.sender, reqData.receiver].sort().join("_");
+  const connectionId = [reqData.from, reqData.to].sort().join("_");
 
   // Use a batch write for atomicity
   const batch = writeBatch(db);
@@ -206,18 +206,18 @@ $("incomingRequests").addEventListener("click", async (e) => {
     // 2. Create connection doc
     const connectionRef = doc(db, "connections", connectionId);
     batch.set(connectionRef, {
-      members: [reqData.sender, reqData.receiver],
+      members: [reqData.from, reqData.to],
       createdAt: serverTimestamp(),
     });
 
     // 3. Create chat doc
     const chatRef = doc(db, "chats", connectionId);
     batch.set(chatRef, {
-      members: [reqData.sender, reqData.receiver],
+      members: [reqData.from, reqData.to],
       createdAt: serverTimestamp(),
       typing: {
-        [reqData.sender]: false,
-        [reqData.receiver]: false
+        [reqData.from]: false,
+        [reqData.to]: false
       },
       lastMessage: { // Initialize lastMessage
         text: "",
