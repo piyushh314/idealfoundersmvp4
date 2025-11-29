@@ -90,10 +90,10 @@ document.getElementById("connectBtn")?.addEventListener("click", async () => {
   const reqSnap = await getDoc(requestRef);
   const revSnap = await getDoc(reverseRef);
 
-  if (reqSnap.exists() || revSnap.exists()) {
-    alert("⚠️ You already have a pending or existing connection with this user.");
-    return;
-  }
+  // if (reqSnap.exists() || revSnap.exists()) {
+  //   alert("⚠️ You already have a pending or existing connection with this user.");
+  //   return;
+  // }
 
   // ✅ Create new connection request
   await setDoc(requestRef, {
