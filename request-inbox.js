@@ -199,17 +199,18 @@ $("incomingRequests").addEventListener("click", async (e) => {
   // Use a batch write for atomicity
   const batch = writeBatch(db);
 
-if (e.target.classList.contains("accept-btn")) {
-  try {
-    // Batch updates
-    batch.update(reqRef, { status: "accepted"});
-
+  if (e.target.classList.contains("accept-btn")) {
+    // 1. Update request status
+    batch.update(reqRef, { status: "accepted" });
+    
+    // 2. Create connection doc
     const connectionRef = doc(db, "connections", connectionId);
     batch.set(connectionRef, {
       members: [reqData.from, reqData.to],
       createdAt: serverTimestamp(),
     });
 
+    // 3. Create chat doc
     const chatRef = doc(db, "chats", connectionId);
     batch.set(chatRef, {
       members: [reqData.from, reqData.to],
@@ -218,24 +219,20 @@ if (e.target.classList.contains("accept-btn")) {
         [reqData.from]: false,
         [reqData.to]: false
       },
-      lastMessage: {
+      lastMessage: { // Initialize lastMessage
         text: "",
         sender: "",
-        createdAt: serverTimestamp()
+        createdAt: serverTimestamp() 
       }
     });
 
+    // 4. (Optional but good) Increment counters - This part is complex in batches
+    // We'll skip it for simplicity, but know that dashboard.js logic does this.
+
     await batch.commit();
+    alert("✅ Connection accepted!");
 
-    // 🔥 ALERT ONLY AFTER SUCCESSFUL COMMIT
-    alert("✅ Connection request accepted!");
-
-  } catch (error) {
-    console.error(error);
-    alert("❌ Error accepting request: " + error.message);
-  }
-}
- else if (e.target.classList.contains("decline-btn")) {
+  } else if (e.target.classList.contains("decline-btn")) {
     await updateDoc(reqRef, { status: "declined" });
     alert("❌ Request declined.");
   }
