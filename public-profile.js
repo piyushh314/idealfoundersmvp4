@@ -81,7 +81,7 @@ document.getElementById("connectBtn")?.addEventListener("click", async () => {
     attemptCount = attemptsSnap.data().count || 0;
   }
 
-  if (attemptCount >= 3) {
+  if (attemptCount >= 10) {
     alert("🚫 You’ve already sent too many requests to this user.");
     return;
   }
