@@ -199,24 +199,21 @@ $("incomingRequests").addEventListener("click", async (e) => {
   // Use a batch write for atomicity
   const batch = writeBatch(db);
 
-  if (e.target.classList.contains("accept-btn")) {
-    // 1. Update request status
-    try {
-      batch.update(reqRef, { status: "accepted" });
-      alert("connection request accepted")
-    } catch (error) {
-      alert(error)
-    }
-    batch.update(reqRef, { status: "accepted" });
-    alert("connection request accepted")
-    // 2. Create connection doc
+if (e.target.classList.contains("accept-btn")) {
+  try {
+    // Batch updates
+    batch.update(reqRef, {
+      from: reqData.from,
+      to: reqData.to,
+      status: "accepted"
+    });
+
     const connectionRef = doc(db, "connections", connectionId);
     batch.set(connectionRef, {
       members: [reqData.from, reqData.to],
       createdAt: serverTimestamp(),
     });
 
-    // 3. Create chat doc
     const chatRef = doc(db, "chats", connectionId);
     batch.set(chatRef, {
       members: [reqData.from, reqData.to],
@@ -225,20 +222,24 @@ $("incomingRequests").addEventListener("click", async (e) => {
         [reqData.from]: false,
         [reqData.to]: false
       },
-      lastMessage: { // Initialize lastMessage
+      lastMessage: {
         text: "",
         sender: "",
-        createdAt: serverTimestamp() 
+        createdAt: serverTimestamp()
       }
     });
 
-    // 4. (Optional but good) Increment counters - This part is complex in batches
-    // We'll skip it for simplicity, but know that dashboard.js logic does this.
-
     await batch.commit();
-    alert("✅ Connection accepted!");
 
-  } else if (e.target.classList.contains("decline-btn")) {
+    // 🔥 ALERT ONLY AFTER SUCCESSFUL COMMIT
+    alert("✅ Connection request accepted!");
+
+  } catch (error) {
+    console.error(error);
+    alert("❌ Error accepting request: " + error.message);
+  }
+}
+else if (e.target.classList.contains("decline-btn")) {
     await updateDoc(reqRef, { status: "declined" });
     alert("❌ Request declined.");
   }
