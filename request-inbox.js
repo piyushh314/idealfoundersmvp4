@@ -201,8 +201,14 @@ $("incomingRequests").addEventListener("click", async (e) => {
 
   if (e.target.classList.contains("accept-btn")) {
     // 1. Update request status
-    await updateDoc(reqRef, { status: "accepted" });
-
+    try {
+      batch.update(reqRef, { status: "accepted" });
+      alert("connection request accepted")
+    } catch (error) {
+      alert(error)
+    }
+    batch.update(reqRef, { status: "accepted" });
+    alert("connection request accepted")
     // 2. Create connection doc
     const connectionRef = doc(db, "connections", connectionId);
     batch.set(connectionRef, {
