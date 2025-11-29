@@ -202,11 +202,7 @@ $("incomingRequests").addEventListener("click", async (e) => {
 if (e.target.classList.contains("accept-btn")) {
   try {
     // Batch updates
-    batch.update(reqRef, {
-      from: reqData.from,
-      to: reqData.to,
-      status: "accepted"
-    });
+    batch.update(reqRef, { status: "accepted"});
 
     const connectionRef = doc(db, "connections", connectionId);
     batch.set(connectionRef, {
@@ -239,7 +235,7 @@ if (e.target.classList.contains("accept-btn")) {
     alert("❌ Error accepting request: " + error.message);
   }
 }
-else if (e.target.classList.contains("decline-btn")) {
+ else if (e.target.classList.contains("decline-btn")) {
     await updateDoc(reqRef, { status: "declined" });
     alert("❌ Request declined.");
   }
