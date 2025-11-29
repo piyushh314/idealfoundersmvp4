@@ -137,8 +137,8 @@ function listenForIncomingRequests(uid) {
           <p class="text-gray-600 text-sm">${sender.industry || "No industry"} • ${sender.location || "Unknown"}</p>
         </div>
         <div class="flex gap-2">
-          <button class="accept-btn" class="bg-green-600 text-white px-3 py-1.5 rounded hover:bg-green-700" data-id="${docSnap.id}">Accept</button>
-          <button class="decline-btn" class="bg-red-500 text-white px-3 py-1.5 rounded hover:bg-red-600" data-id="${docSnap.id}">Decline</button>
+          <button  class="accept-btn bg-green-600 text-white px-3 py-1.5 rounded hover:bg-green-700" data-id="${docSnap.id}">Accept</button>
+          <button  class="decline-btn bg-red-500 text-white px-3 py-1.5 rounded hover:bg-red-600" data-id="${docSnap.id}">Decline</button>
         </div>
       `;
       incomingWrap.appendChild(card);
